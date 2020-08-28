@@ -1,5 +1,4 @@
 <template>
-
     <div class="col-md-12">
                     
                     <div class = "fila">
@@ -68,18 +67,9 @@ export default {
 
     data:function(){
         return {
-            datos:{
-                codigo : this.codigo,
-                nombre : this.nombre,
-                ap     : this.ap,
-                am     : this.am,
-                fecha_nacimiento : this.fecha_nacimiento,
-                edad : this.edad,
-                puesto : this.puesto,
-                antiguedad : this.antiguedad,
-            },
+           
             profesores:[],
-            errores: [],
+            
         }
     },
     methods:{
@@ -95,23 +85,7 @@ export default {
             }
         },
     
-    async enviarDatos(datos){
-            try{
-                var postProfesores ='/api/profesores';
-                axio.post(this.postProfesores,datos).then(response=>{
-                        if(response.status == 200){
-                            swal("Se Guardo Sin Problemas ");
-                            console.log(response.data);
-                            this.$emit('profesores',1);
-                        }
-                }).catch(error =>{
-                    this.errores = error.response.data.errors;
-                })
-
-            }catch (e){
-                console.log(e);
-            }
-        },
+   
     }
   
 }
