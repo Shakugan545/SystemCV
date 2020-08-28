@@ -1,11 +1,12 @@
 <template>
+
     <div class="col-md-12">
                     
                     <div class = "fila">
                                     <div class = "col-md-12">
                                         <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#ModalProfesores" data-backdrop="false"> Agregar </a>
-                                    </div>
-                                    </div>
+                    </div>
+                    </div>
                         <div class="card-body table-full-width table-responsive ">
                             <table class="table table-hover  table-striped ">
                                 <thead>
