@@ -2006,6 +2006,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['codigo', 'nombre', 'ap', 'am', 'fecha_nacimiento', 'edad', 'puesto', 'antiguedad'],
   beforeMount: function beforeMount() {
@@ -2247,10 +2252,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['codigo', 'nombre', 'ap', 'am', 'fecha_nacimiento', 'edad', 'puesto', 'antiguedad'],
   beforeMount: function beforeMount() {
@@ -2353,10 +2354,6 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-//
-//
-//
-//
 //
 //
 //
@@ -38899,9 +38896,11 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "col-md-12" }, [
+    _vm._m(0),
+    _vm._v(" "),
     _c("div", { staticClass: "card-body table-full-width table-responsive " }, [
       _c("table", { staticClass: "table table-hover  table-striped " }, [
-        _vm._m(0),
+        _vm._m(1),
         _vm._v(" "),
         _c(
           "tbody",
@@ -38933,6 +38932,28 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "fila" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c(
+          "a",
+          {
+            staticClass: "btn btn-primary pull-right",
+            attrs: {
+              href: "#",
+              "data-toggle": "modal",
+              "data-target": "#ModalProfesores",
+              "data-backdrop": "false"
+            }
+          },
+          [_vm._v(" Agregar ")]
+        )
+      ])
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -38982,8 +39003,6 @@ var render = function() {
   return _c("div", { staticClass: "col-md-12" }, [
     _c("div", { staticClass: "card strpied-tabled-with-hover" }, [
       _c("div", { staticClass: "card-header  bg-secondary" }, [
-        _vm._m(0),
-        _vm._v(" "),
         _c("div", { staticClass: "rol" }, [
           _c("h4", { staticClass: "card-title text-white text-center" }, [
             _vm._v("Profesores Registrados")
@@ -39022,7 +39041,7 @@ var render = function() {
                         }
                       },
                       [
-                        _vm._m(1),
+                        _vm._m(0),
                         _vm._v(" "),
                         _c("div", { staticClass: "modal-body" }, [
                           _c("div", { staticClass: "row" }, [
@@ -39384,7 +39403,7 @@ var render = function() {
                           ])
                         ]),
                         _vm._v(" "),
-                        _vm._m(2)
+                        _vm._m(1)
                       ]
                     )
                   ])
@@ -39398,7 +39417,7 @@ var render = function() {
     _vm._v(" "),
     _c("div", { staticClass: "card-body table-full-width table-responsive " }, [
       _c("table", { staticClass: "table table-hover  table-striped " }, [
-        _vm._m(3),
+        _vm._m(2),
         _vm._v(" "),
         _c(
           "tbody",
@@ -39430,28 +39449,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "fila" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-primary pull-right",
-            attrs: {
-              href: "#",
-              "data-toggle": "modal",
-              "data-target": "#ModalProfesores",
-              "data-backdrop": "false"
-            }
-          },
-          [_vm._v(" Agregar ")]
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -39542,8 +39539,6 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "card strpied-tabled-with-hover" }, [
     _c("div", { staticClass: "card-header  bg-secondary" }, [
-      _vm._m(0),
-      _vm._v(" "),
       _c("div", { staticClass: "rol" }, [
         _c("h4", { staticClass: "card-title text-white text-center" }, [
           _vm._v("Profesores Registrados")
@@ -39582,7 +39577,7 @@ var render = function() {
                       }
                     },
                     [
-                      _vm._m(1),
+                      _vm._m(0),
                       _vm._v(" "),
                       _c("div", { staticClass: "modal-body" }, [
                         _c("div", { staticClass: "row" }, [
@@ -39933,7 +39928,7 @@ var render = function() {
                         ])
                       ]),
                       _vm._v(" "),
-                      _vm._m(2)
+                      _vm._m(1)
                     ]
                   )
                 ])
@@ -39946,28 +39941,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "fila" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c(
-          "a",
-          {
-            staticClass: "btn btn-primary pull-right",
-            attrs: {
-              href: "#",
-              "data-toggle": "modal",
-              "data-target": "#ModalProfesores",
-              "data-backdrop": "false"
-            }
-          },
-          [_vm._v(" Agregar ")]
-        )
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

@@ -2,11 +2,7 @@
     <div class="card strpied-tabled-with-hover">
                         <div class="card-header  bg-secondary">
                             <!-- Boton que activa el modal-->
-                                 <div class = "fila">
-                                    <div class = "col-md-12">
-                                        <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#ModalProfesores" data-backdrop="false"> Agregar </a>
-                                    </div>
-                                    </div>
+                                 
                              <!--Aqui termina el boton que inicia el modal -->
                             <div class="rol">
                                <h4 class="card-title text-white text-center">Profesores Registrados</h4> 
