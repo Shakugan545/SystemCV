@@ -65,7 +65,6 @@
                         <div class="card-header  bg-secondary">
                             <div class="rol">
                                 @include('academica.modal_create') <!-- INCLUIMOS Modal Store -->
-                                
                             </div>
                             <div class="rol">
                               <h4 class="card-title text-white text-center">Grados Academicos</h4>  
@@ -123,7 +122,8 @@
             </div>
         </div>
  
-        
+        <addprofesores-component></addprofesores-component>
         <tablas-component></tablas-component>
-    
+        
+      
 @endsection

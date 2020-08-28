@@ -19,4 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('profesores','ProfesoresController@todos');
-Route::post('profesores','ProfesoresController@store');
+Route::post('profesores','ProfesoresController@agregar');
+

@@ -21,6 +21,8 @@ window.Vue = require('vue');
 
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('tablas-component', require('./components/TablasComponent.vue').default);
+Vue.component('tablasexp-component', require('./components/TablasExpComponent.vue').default);
+Vue.component('addprofesores-component', require('./components/addProfesores.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
