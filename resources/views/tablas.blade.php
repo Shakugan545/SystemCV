@@ -123,7 +123,6 @@
         </div>
  
         
-        <tablas-component></tablas-component>
         
       
 @endsection

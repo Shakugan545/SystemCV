@@ -1,17 +1,9 @@
 <template>
-    <div class="card strpied-tabled-with-hover">
-                        <div class="card-header  bg-secondary">
-                            <!-- Boton que activa el modal-->
-                                 
-                             <!--Aqui termina el boton que inicia el modal -->
-                            <div class="rol">
-                               <h4 class="card-title text-white text-center">Profesores Registrados</h4> 
-                               
                          <!--Inicio del modal -->
                         <div class="modal fade" id="ModalProfesores" tabindex="-1" role="dialog" aria-label="EtiquetProfesores" aria-hidden="true" >
                         <div class="modal-dialog  modal-lg" role="document" >
                             <div class="modal-content">
-                                <form  @submit.prevent="enviarDatos(datos)" method="post" v-bind:action="'/api/profesores'" > 
+                                <form  @submit.prevent="enviarDatos" method="post" > 
 
                                     <div class="modal-header">
                                         <h5 class="modal-title">Agregar Profesores</h5>
@@ -84,16 +76,16 @@
                            
                             </div>
                         </div>
-                        </div>
+                </div>
                      <!-- Final del Modal -->
-                            </div>
-                          </div> 
-                          
-                        </div>
+           
+    
 </template>
 
 <script>
+ import axios from 'axios'
 export default {
+   
      props:[
             'codigo',
             'nombre',
@@ -105,21 +97,20 @@ export default {
             'antiguedad'
         ],
     beforeMount(){
-        this.getProfesores();
-        this.enviarDatos();
+       
     },
 
     data:function(){
         return {
             datos:{
-                codigo : this.codigo,
-                nombre : this.nombre,
-                ap     : this.ap,
-                am     : this.am,
-                fecha_nacimiento : this.fecha_nacimiento,
-                edad : this.edad,
-                puesto : this.puesto,
-                antiguedad : this.antiguedad,
+                codigo : '',
+                nombre : '',
+                ap     : '',
+                am     : '',
+                fecha_nacimiento : '',
+                edad : '',
+                puesto : '',
+                antiguedad : '',
             },
             profesores:[],
             errores: [],
@@ -127,17 +118,19 @@ export default {
     },
     methods:{
 
-    async enviarDatos(datos){
+    async enviarDatos(){
+                console.log('Enviar datos')
             try{
-                var postProfesores ='/api/profesores';
-                axio.post(this.postProfesores,datos).then(response=>{
+                var postProfesores = 'http://127.0.0.1:8000/api/profesores';
+                axios.post(postProfesores,this.datos).then(response=>{ //Sin this.
                         if(response.status == 200){
-                            swal("Se Guardo Sin Problemas ");
+                            alert("Se Guardo Sin Problemas ");
                             console.log(response.data);
-                            this.$emit('profesores',1);
+                            //this.$emit('profesores',1);
                         }
                 }).catch(error =>{
-                    this.errores = error.response.data.errors;
+                    console.log(error)
+                    // this.errores = error.response.data.errors;
                 })
 
             }catch (e){

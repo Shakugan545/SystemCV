@@ -1,1 +1,2 @@
-<tablasexp-component></tablasexp-component>
+<addprofesores-component></addprofesores-component>
+        <tablas-component></tablas-component>

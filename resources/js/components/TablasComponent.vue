@@ -1,11 +1,15 @@
 <template>
     <div class="col-md-12">
-                    
+        <div class="card strpied-tabled-with-hover">
+            <div class="card-header  bg-secondary">
+             
                     <div class = "fila">
-                                    <div class = "col-md-12">
-                                        <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#ModalProfesores" data-backdrop="false"> Agregar </a>
+                         <div class = "col-md-12">
+                            <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#ModalProfesores" data-backdrop="false"> Agregar </a>
+                            <h5>ADD Profesores</h5>
                     </div>
                     </div>
+                     </div>
                         <div class="card-body table-full-width table-responsive ">
                             <table class="table table-hover  table-striped ">
                                 <thead>
@@ -44,6 +48,8 @@
                             </table>
                             
                         </div>
+                           
+            </div>
     </div>
                 
 </template>
@@ -62,7 +68,7 @@ export default {
         ],
     beforeMount(){
         this.getProfesores();
-        this.enviarDatos();
+       
     },
 
     data:function(){
@@ -75,7 +81,7 @@ export default {
     methods:{
     async getProfesores(){
             try {
-                var urlProfesores = '/api/profesores';
+                var urlProfesores = 'http://127.0.0.1:8000/api/profesores';
                 axios.get(urlProfesores).then(response=>{
                     this.profesores = response.data;
                 })

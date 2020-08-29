@@ -62,6 +62,7 @@ class ProfesoresController extends Controller
         
         return redirect()->route('profesores.index',compact('profesores'));
     }
+    
     public function agregar(Request $request){
         $profesores =  Profesores::create($request->all());
         return redirect()->route('profesores.index',compact('profesores'));
