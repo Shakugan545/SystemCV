@@ -13,14 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/1', function () {
-    return view('welcome');
-});
+
 
 Route::get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
-
+    return view('inicio');
+})->name('inicio');
 
 
 
@@ -29,13 +26,30 @@ Route::get('/Docentes', function () {
     return view('profesores.index');
 })->name('profesores');
 
-Route::get('/profesores', function () {
-    return view('profesores.index');
-});
 Route::get('/tablas', function () {
-    return view('tablas');
-})->name('tablas');
+    return view('profesores.index');
+})->name('academicas.index');
+
+
+
+
+//calis
+ 
 
 Route::resource('profesores','ProfesoresController');
 Route::resource('academica','AcademicaController');
+Route::resource('capacitaciones', 'CapacitacionesController');
+Route::resource('disciplinas', 'DisciplinasController');
+Route::resource('gestion','GestionController');
+Route::resource('productos', 'ProductosController');
+Route::resource('noacademica', 'NoacademicaController'); //duda sobre el nombre de la ruta
+Route::resource('ingenieriles', 'IngenierilesController');
+Route::resource('participaciones', 'ParticipacionesController');
+Route::resource('logrosnoacademicos', 'LogrosnoacademicosController');
+Route::resource('aportaciones', 'AportacionesController');
+Route::resource('premios', 'PremiosController');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

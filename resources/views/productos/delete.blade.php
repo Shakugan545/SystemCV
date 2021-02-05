@@ -1,0 +1,7 @@
+<form action="{{route('productos.destroy',$prod->id)}}" class="formulario-eliminar-productos" method="post">
+    @method('DELETE')
+    {{ @csrf_field() }}
+    
+    
+    <button type="submit" class="btn btn-danger"  ><i class="fa fa-trash" aria-hidden="true"></i></button>
+</form>

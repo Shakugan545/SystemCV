@@ -1,5 +1,6 @@
-<form action="{{route('academica.destroy',$academi->id)}}" method="post">
+<form action="{{route('academica.destroy',$academi->id)}}" class="formulario-eliminar-academicos" method="post">
     @method('DELETE')
     {{ @csrf_field() }}
-    <input type="submit" class="btn btn-danger" value="eliminar">
+    
+    <button type="submit" class="btn btn-danger"  ><i class="fa fa-trash" aria-hidden="true"></i></button>
 </form>

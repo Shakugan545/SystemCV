@@ -27,7 +27,7 @@ class CreateProfesoresTable extends Migration
             $table->string('ap', 45)->nullable();
             $table->string('am', 45)->nullable();
             $table->date('fecha_nacimiento')->nullable();
-            $table->string('edad', 30)->nullable();
+            $table->integer('edad')->nullable();
             $table->string('antiguedad', 45)->nullable();
             $table->string('puesto', 45)->nullable();
         });

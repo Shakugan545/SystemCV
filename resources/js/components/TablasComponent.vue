@@ -5,8 +5,13 @@
              
                     <div class = "fila">
                          <div class = "col-md-12">
-                            <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#ModalProfesores" data-backdrop="false"> Agregar </a>
-                            <h5>ADD Profesores</h5>
+                           
+                          
+                            <div class="row">
+                            <div class="col-md-12">
+                                <a href="#" class="btn btn-primary pull-right" data-toggle="modal" data-target="#addProfesores" data-backdrop="false">add</a>
+                            </div>
+                                </div>
                     </div>
                     </div>
                      </div>
@@ -36,7 +41,7 @@
                                         <td>
                                            
                                             
-                                           <!-- @include('profesores.modal_edit')  INCLUIMOS LA Modal edit -->
+                                          
                                            <!-- @include('profesores.delete')  INCLUIMOS Delete -->
                                         </td>
                                     </tr>
@@ -57,14 +62,7 @@
 <script>
 export default {
      props:[
-            'codigo',
-            'nombre',
-            'ap',
-            'am',
-            'fecha_nacimiento',
-            'edad',
-            'puesto',
-            'antiguedad'
+          
         ],
     beforeMount(){
         this.getProfesores();

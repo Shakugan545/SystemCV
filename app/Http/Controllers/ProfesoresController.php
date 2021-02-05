@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Profesores;
 use App\Academica;
+use App\Http\Requests\ProfesoresEditRequest;
 use App\Http\Requests\ProfesoresRequest;
 
 // use App\Capacitaciones;
@@ -15,6 +16,11 @@ class ProfesoresController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+       
+    }
     public function index()
     {
         //retornamos todo lo academicos
@@ -25,8 +31,10 @@ class ProfesoresController extends Controller
         $profesores = Profesores::with('academica')->get();
        // $capacitaciones = Profesores::with('capacitaciones')->get();
         
-        return view('tablas',compact('profesores','academica'));
+        return view('profesores.index',compact('profesores','academica'));
+        
     }
+    
     public function todos(){
         $profesores = Profesores::with(['academica'])->get();
         return $profesores;
@@ -40,7 +48,10 @@ class ProfesoresController extends Controller
      */
     public function create()
     {
-        return view('profesores.index');
+        
+
+        return view('profesores.crear');
+        
     }
 
     /**
@@ -49,7 +60,7 @@ class ProfesoresController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProfesoresRequest $request)
     {
         
         $profesores =  Profesores::create($request->all());
@@ -60,9 +71,9 @@ class ProfesoresController extends Controller
        // $profesores->capacitaciones_id = $capacitaciones->id;
        // $profesores->save();
         
-        return redirect()->route('profesores.index',compact('profesores'));
+        return redirect()->route('profesores.index',compact('profesores'))->with('guardar','guardar');
     }
-    
+
     public function agregar(Request $request){
         $profesores =  Profesores::create($request->all());
         return redirect()->route('profesores.index',compact('profesores'));
@@ -89,11 +100,9 @@ class ProfesoresController extends Controller
     public function edit($id)
     { 
         
-        $profesores = Profesores::find($id);
-        //$academica = Academica::find($profesores->academica_id);
-       // $capacitaciones = Capacitaciones::find($profesores->capacitaciones->id);
-        //$capacitaciones = Capacitaciones::find($profesores->capacitaciones_id);
-        return view('profesores.edit',compact('profesores'));
+        $profesores = Profesores::findOrFail($id);
+      
+        return view('profesores.editar',compact('profesores'));
     }
 
     /**
@@ -103,7 +112,7 @@ class ProfesoresController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ProfesoresEditRequest $request, $id)
     {
         $profesores = profesores::find($id);
        // $academica = Academica::find($id);
@@ -113,6 +122,12 @@ class ProfesoresController extends Controller
        // $academica->update($request->all());
        // $capacitaciones->update($request->all());
 
+        return redirect()->route('profesores.index')->with('editar','editar');
+    }
+
+    public function editar(Request $request, $id){
+        $profesores = profesores::find($id);
+        $profesores->update($request->all());
         return redirect()->route('profesores.index');
     }
 
@@ -131,7 +146,7 @@ class ProfesoresController extends Controller
             $profesores->delete();
            // $academica->delete();
             //$capacitaciones->delete();
-            return redirect()->route('profesores.index');
+            return redirect()->route('profesores.index')->with('eliminar','ok');
        }catch(\Exception $e){
             return $e;
        }

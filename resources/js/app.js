@@ -8,6 +8,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -22,7 +24,9 @@ window.Vue = require('vue');
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('tablas-component', require('./components/TablasComponent.vue').default);
 Vue.component('tablasexp-component', require('./components/TablasExpComponent.vue').default);
-Vue.component('addprofesores-component', require('./components/addProfesores.vue').default);
+Vue.component('addprofesores-component', require('./components/profesores/addProfesores.vue').default);
+Vue.component('editprofesores-component', require('./components/profesores/editProfesores.vue').default);
+Vue.component('bootvue-component', require('./components/bootvueComponent.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

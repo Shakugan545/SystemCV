@@ -23,12 +23,9 @@ class CreateParticipacionesTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('nombre_participacion', 100)->nullable();
-            $table->string('membresia', 45)->nullable();
-            $table->string('membresia_act', 45)->nullable();
+            $table->string('organismo', 100)->nullable();
+            $table->integer('tiempo_membresia')->nullable();
             $table->string('lvl_participacion', 45)->nullable();
-            $table->string('aportaciones', 200)->nullable();
-            $table->string('premios', 200)->nullable();
             $table->unsignedInteger('profesores_codigo');
 
             $table->index(["profesores_codigo"], 'fk_participaciones_profesores1_idx');

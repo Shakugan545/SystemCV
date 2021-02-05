@@ -2017,8 +2017,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['codigo', 'nombre', 'ap', 'am', 'fecha_nacimiento', 'edad', 'puesto', 'antiguedad'],
+  props: [],
   beforeMount: function beforeMount() {
     this.getProfesores();
   },
@@ -2068,129 +2073,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
-
-function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -2214,94 +2096,70 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['codigo', 'nombre', 'ap', 'am', 'fecha_nacimiento', 'edad', 'puesto', 'antiguedad'],
-  beforeMount: function beforeMount() {
-    this.getProfesores();
+  computed: {
+    nameState: function nameState() {
+      return this.name.length > 2 ? true : false;
+    }
   },
   data: function data() {
-    var _ref;
-
-    return _ref = {
-      datos: []
-    }, _defineProperty(_ref, "datos", {
-      codigo: '',
-      nombre: '',
-      ap: '',
-      am: '',
-      fecha_nacimiento: '',
-      edad: '',
-      puesto: '',
-      antiguedad: ''
-    }), _defineProperty(_ref, "profesores", []), _defineProperty(_ref, "errores", []), _ref;
-  },
-  methods: {
-    getProfesores: function getProfesores() {
-      var _this = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var urlProfesores;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
-          while (1) {
-            switch (_context.prev = _context.next) {
-              case 0:
-                try {
-                  urlProfesores = '/api/profesores';
-                  axios.get(urlProfesores).then(function (response) {
-                    _this.profesores = response.data;
-                  });
-                } catch (ex) {
-                  console.log(ex);
-                }
-
-              case 1:
-              case "end":
-                return _context.stop();
-            }
-          }
-        }, _callee);
-      }))();
-    },
-    agregar: function agregar() {
-      var _this2 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var postProfesores, params;
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                postProfesores = '/api/profesores';
-                params = {
-                  codigo: _this2.datos.codigo,
-                  nombre: _this2.datos.nombre,
-                  ap: _this2.datos.ap,
-                  am: _this2.datos.am,
-                  fecha_nacimiento: _this2.datos.fecha_nacimiento,
-                  edad: _this2.datos.edad,
-                  puesto: _this2.datos.puesto,
-                  antiguedad: _this2.datos.antiguedad
-                };
-                _this2.datos.codigo = '', _this2.datos.nombre = '', _this2.datos.ap = '', _this2.datos.am = '', _this2.datos.fecha_nacimiento = '', _this2.datos.edad = '', _this2.datos.puesto = '', _this2.datos.antiguedad = '', axio.post(_this2.postProfesores, params).then(function (response) {
-                  _this2.datos.push(res.data);
-                });
-
-              case 3:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2);
-      }))();
-    }
+    return {
+      name: ''
+    };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/addProfesores.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/addProfesores.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/bootvueComponent.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/bootvueComponent.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    nameState: function nameState() {
+      return this.name.length > 2 ? true : false;
+    }
+  },
+  data: function data() {
+    return {
+      name: ''
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/addProfesores.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/profesores/addProfesores.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -2401,9 +2259,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ['codigo', 'nombre', 'ap', 'am', 'fecha_nacimiento', 'edad', 'puesto', 'antiguedad'],
+  props: [//se agregan los nombre de la base de datos
+  'codigo', 'nombre', 'ap', 'am', 'fecha_nacimiento', 'edad', 'puesto', 'antiguedad'],
   beforeMount: function beforeMount() {},
   data: function data() {
     return {
@@ -2431,24 +2293,24 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                console.log('Enviar datos');
-
                 try {
                   postProfesores = 'http://127.0.0.1:8000/api/profesores';
                   axios__WEBPACK_IMPORTED_MODULE_1___default.a.post(postProfesores, _this.datos).then(function (response) {
                     //Sin this.
                     if (response.status == 200) {
-                      alert("Se Guardo Sin Problemas ");
-                      console.log(response.data); //this.$emit('profesores',1);
+                      console.log(response.data);
+                      window.location.href = 'profesores'; //No retornamod cuando se guarde la información
+                      //this.$emit('profesores',1);
                     }
                   })["catch"](function (error) {
-                    console.log(error); // this.errores = error.response.data.errors;
+                    console.log(error);
+                    _this.errores = error.response.data.errors;
                   });
                 } catch (e) {
                   console.log(e);
                 }
 
-              case 2:
+              case 1:
               case "end":
                 return _context.stop();
             }
@@ -2456,6 +2318,221 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         }, _callee);
       }))();
     }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/editProfesores.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/profesores/editProfesores.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: ['codigo', 'nombre', 'ap', 'am', 'fecha_nacimiento', 'edad', 'puesto', 'antiguedad'],
+  beforeMount: function beforeMount() {
+    this.getProfesores();
+  },
+  data: function data() {
+    return {
+      datos: {
+        codigo: '',
+        nombre: '',
+        ap: '',
+        am: '',
+        fecha_nacimiento: '',
+        edad: '',
+        puesto: '',
+        antiguedad: ''
+      },
+      profesores: [],
+      errores: []
+    };
+  },
+  methods: {
+    getProfesores: function getProfesores() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var urlProfesores;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                try {
+                  urlProfesores = 'http://127.0.0.1:8000/api/profesores';
+                  axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(urlProfesores).then(function (response) {
+                    _this.profesores = response.data;
+                    console.log(response);
+                  });
+                } catch (ex) {
+                  console.log(ex);
+                }
+
+              case 1:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }))();
+    },
+    editarDatos: function editarDatos() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var editProfesores2;
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                editProfesores2 = '/api/profesores';
+                axios__WEBPACK_IMPORTED_MODULE_1___default.a.put(editProfesores2).then(function (response) {
+                  console.log(response.data);
+                  window.location.href = 'profesores';
+
+                  _this2.getProfesores();
+
+                  _this2.datos = {
+                    codigo: _this2.codigo,
+                    nombre: _this2.nombre,
+                    ap: _this2.ap,
+                    am: _this2.am,
+                    fecha_nacimiento: _this2.fecha_nacimiento,
+                    edad: _this2.edad,
+                    puesto: _this2.puesto,
+                    antiguedad: _this2.antiguedad
+                  };
+                  _this2.profesores = response.data;
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }))();
+    }
+    /*async editarDatos(){
+            try{
+                var editProfesores = '/api/profesores';
+                axios.put(editProfesores,this.datos).then(response=>{ //Sin this.
+                        if(response.status == 200){
+                            console.log(response.data);
+                            window.location.href = 'profesores'; //No retornamod cuando se guarde la información
+                            //this.$emit('profesores',1);
+                        }
+                }).catch(error =>{
+                    console.log(error)
+                    
+                    this.errores = error.response.data.errors;
+                })
+             }catch (e){
+                console.log(e);
+            }
+        },*/
+
   }
 });
 
@@ -38897,21 +38974,23 @@ var staticRenderFns = [
     return _c("div", { staticClass: "card-header  bg-secondary" }, [
       _c("div", { staticClass: "fila" }, [
         _c("div", { staticClass: "col-md-12" }, [
-          _c(
-            "a",
-            {
-              staticClass: "btn btn-primary pull-right",
-              attrs: {
-                href: "#",
-                "data-toggle": "modal",
-                "data-target": "#ModalProfesores",
-                "data-backdrop": "false"
-              }
-            },
-            [_vm._v(" Agregar ")]
-          ),
-          _vm._v(" "),
-          _c("h5", [_vm._v("ADD Profesores")])
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-md-12" }, [
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-primary pull-right",
+                  attrs: {
+                    href: "#",
+                    "data-toggle": "modal",
+                    "data-target": "#addProfesores",
+                    "data-backdrop": "false"
+                  }
+                },
+                [_vm._v("add")]
+              )
+            ])
+          ])
         ])
       ])
     ])
@@ -38962,532 +39041,107 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "col-md-12" }, [
-    _c("div", { staticClass: "card strpied-tabled-with-hover" }, [
-      _c("div", { staticClass: "card-header  bg-secondary" }, [
-        _c("div", { staticClass: "rol" }, [
-          _c("h4", { staticClass: "card-title text-white text-center" }, [
-            _vm._v("Profesores Registrados")
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "modal fade",
-              attrs: {
-                id: "ModalProfesores",
-                tabindex: "-1",
-                role: "dialog",
-                "aria-label": "EtiquetProfesores",
-                "aria-hidden": "true"
-              }
-            },
-            [
-              _c(
-                "div",
-                {
-                  staticClass: "modal-dialog  modal-lg",
-                  attrs: { role: "document" }
-                },
-                [
-                  _c("div", { staticClass: "modal-content" }, [
-                    _c(
-                      "form",
-                      {
-                        attrs: { method: "post", action: "/api/profesores" },
-                        on: {
-                          submit: function($event) {
-                            $event.preventDefault()
-                            return _vm.agregar()
-                          }
-                        }
-                      },
-                      [
-                        _vm._m(0),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "modal-body" }, [
-                          _c("div", { staticClass: "row" }, [
-                            _c("div", { staticClass: "col" }, [
-                              _c(
-                                "div",
-                                { staticClass: "card card-body text-center " },
-                                [
-                                  _c("h5", [_vm._v("Información del Docente")]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "form-row" }, [
-                                    _c("div", { staticClass: "col" }, [
-                                      _c(
-                                        "label",
-                                        { attrs: { for: "codigo" } },
-                                        [_vm._v("Codigo")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.datos.codigo,
-                                            expression: "datos.codigo"
-                                          }
-                                        ],
-                                        staticClass: "form-control  ",
-                                        attrs: {
-                                          type: "text",
-                                          name: "codigo",
-                                          id: "codigo",
-                                          placeholder: "Codigo"
-                                        },
-                                        domProps: { value: _vm.datos.codigo },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.datos,
-                                              "codigo",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "col" }, [
-                                      _c(
-                                        "label",
-                                        { attrs: { for: "nombres" } },
-                                        [_vm._v("nombres")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.datos.nombre,
-                                            expression: "datos.nombre"
-                                          }
-                                        ],
-                                        staticClass: "form-control  ",
-                                        attrs: {
-                                          type: "text",
-                                          name: "nombre",
-                                          id: "nombre",
-                                          placeholder: "Nombre"
-                                        },
-                                        domProps: { value: _vm.datos.nombre },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.datos,
-                                              "nombre",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ])
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "form-row" }, [
-                                    _c("div", { staticClass: "col" }, [
-                                      _c("label", { attrs: { for: "ap" } }, [
-                                        _vm._v("Apellido Paterno")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.datos.ap,
-                                            expression: "datos.ap"
-                                          }
-                                        ],
-                                        staticClass: "form-control ",
-                                        attrs: {
-                                          type: "text",
-                                          name: "ap",
-                                          id: "ap",
-                                          placeholder: "Apellido parterno"
-                                        },
-                                        domProps: { value: _vm.datos.ap },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.datos,
-                                              "ap",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "col" }, [
-                                      _c("label", { attrs: { for: "am" } }, [
-                                        _vm._v("Apellido Materno")
-                                      ]),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.datos.am,
-                                            expression: "datos.am"
-                                          }
-                                        ],
-                                        staticClass: "form-control ",
-                                        attrs: {
-                                          type: "text",
-                                          name: "am",
-                                          id: "am",
-                                          placeholder: "Apellido Materno"
-                                        },
-                                        domProps: { value: _vm.datos.am },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.datos,
-                                              "am",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ])
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "form-row" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "col" },
-                                      [
-                                        _c(
-                                          "Label",
-                                          {
-                                            attrs: { for: "fecha_nacimiento" }
-                                          },
-                                          [_vm._v("Fecha de nacimiento")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.datos.fecha_nacimiento,
-                                              expression:
-                                                "datos.fecha_nacimiento"
-                                            }
-                                          ],
-                                          staticClass: "form-control ",
-                                          attrs: {
-                                            type: "text",
-                                            name: "fecha_nacimiento",
-                                            id: "fecha_nacimiento",
-                                            placeholder: "Año/mes/dia"
-                                          },
-                                          domProps: {
-                                            value: _vm.datos.fecha_nacimiento
-                                          },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                _vm.datos,
-                                                "fecha_nacimiento",
-                                                $event.target.value
-                                              )
-                                            }
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c(
-                                      "div",
-                                      { staticClass: "col" },
-                                      [
-                                        _c(
-                                          "Label",
-                                          { attrs: { for: "edad" } },
-                                          [_vm._v("Edad")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.datos.edad,
-                                              expression: "datos.edad"
-                                            }
-                                          ],
-                                          staticClass: "form-control ",
-                                          attrs: {
-                                            type: "text",
-                                            name: "edad",
-                                            id: "edad",
-                                            placeholder: "Edad"
-                                          },
-                                          domProps: { value: _vm.datos.edad },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                _vm.datos,
-                                                "edad",
-                                                $event.target.value
-                                              )
-                                            }
-                                          }
-                                        })
-                                      ],
-                                      1
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _c("div", { staticClass: "form-row" }, [
-                                    _c(
-                                      "div",
-                                      { staticClass: "col" },
-                                      [
-                                        _c(
-                                          "Label",
-                                          { attrs: { for: "puesto" } },
-                                          [_vm._v("Puesto Actual")]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("input", {
-                                          directives: [
-                                            {
-                                              name: "model",
-                                              rawName: "v-model",
-                                              value: _vm.datos.puesto,
-                                              expression: "datos.puesto"
-                                            }
-                                          ],
-                                          staticClass: "form-control ",
-                                          attrs: {
-                                            type: "text",
-                                            name: "puesto",
-                                            id: "puesto ",
-                                            placeholder: "Puesto Actual"
-                                          },
-                                          domProps: { value: _vm.datos.puesto },
-                                          on: {
-                                            input: function($event) {
-                                              if ($event.target.composing) {
-                                                return
-                                              }
-                                              _vm.$set(
-                                                _vm.datos,
-                                                "puesto",
-                                                $event.target.value
-                                              )
-                                            }
-                                          }
-                                        }),
-                                        _vm._v(" "),
-                                        _c("span", {
-                                          staticClass: "form-control-feedback"
-                                        })
-                                      ],
-                                      1
-                                    ),
-                                    _vm._v(" "),
-                                    _c("div", { staticClass: "col" }, [
-                                      _c(
-                                        "label",
-                                        { attrs: { for: "antiguedad" } },
-                                        [_vm._v("Antiguedad")]
-                                      ),
-                                      _vm._v(" "),
-                                      _c("input", {
-                                        directives: [
-                                          {
-                                            name: "model",
-                                            rawName: "v-model",
-                                            value: _vm.datos.antiguedad,
-                                            expression: "datos.antiguedad"
-                                          }
-                                        ],
-                                        staticClass: "form-control ",
-                                        attrs: {
-                                          type: "text",
-                                          name: "antiguedad",
-                                          id: "antiguedad",
-                                          placeholder: "Antiguedad"
-                                        },
-                                        domProps: {
-                                          value: _vm.datos.antiguedad
-                                        },
-                                        on: {
-                                          input: function($event) {
-                                            if ($event.target.composing) {
-                                              return
-                                            }
-                                            _vm.$set(
-                                              _vm.datos,
-                                              "antiguedad",
-                                              $event.target.value
-                                            )
-                                          }
-                                        }
-                                      })
-                                    ])
-                                  ])
-                                ]
-                              )
-                            ])
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _vm._m(1)
-                      ]
-                    )
-                  ])
-                ]
-              )
-            ]
-          )
-        ])
+  return _c(
+    "div",
+    { attrs: { role: "group" } },
+    [
+      _c("label", { attrs: { for: "input-live" } }, [_vm._v("Name:")]),
+      _vm._v(" "),
+      _c("b-form-input", {
+        attrs: {
+          id: "input-live",
+          state: _vm.nameState,
+          "aria-describedby": "input-live-help input-live-feedback",
+          placeholder: "Enter your name",
+          trim: ""
+        },
+        model: {
+          value: _vm.name,
+          callback: function($$v) {
+            _vm.name = $$v
+          },
+          expression: "name"
+        }
+      }),
+      _vm._v(" "),
+      _c("b-form-invalid-feedback", { attrs: { id: "input-live-feedback" } }, [
+        _vm._v("\n    Enter at least 3 letters\n  ")
+      ]),
+      _vm._v(" "),
+      _c("b-form-text", { attrs: { id: "input-live-help" } }, [
+        _vm._v("Your full name.")
       ])
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "card-body table-full-width table-responsive " }, [
-      _c("table", { staticClass: "table table-hover  table-striped " }, [
-        _vm._m(2),
-        _vm._v(" "),
-        _c(
-          "tbody",
-          _vm._l(_vm.profesores, function(profe) {
-            return _c("tr", { key: profe.codigo }, [
-              _c("td", [_vm._v(_vm._s(profe.codigo) + " ")]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(profe.nombre))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(profe.ap))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(profe.am))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(profe.fecha_nacimiento))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(profe.edad))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(profe.puesto))]),
-              _vm._v(" "),
-              _c("td", [_vm._v(_vm._s(profe.antiguedad))]),
-              _vm._v(" "),
-              _c("td")
-            ])
-          }),
-          0
-        )
-      ])
-    ])
-  ])
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-header" }, [
-      _c("h5", { staticClass: "modal-title" }, [_vm._v("Agregar Profesores")]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "close",
-          attrs: {
-            type: "button",
-            "data-dismiss": "modal",
-            "aria-label": "Close"
-          }
-        },
-        [_c("i", { staticClass: "material-icons" }, [_vm._v("X")])]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "modal-footer" }, [
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-danger btn-link",
-          attrs: { type: "button", "data-dismiss": "modal" }
-        },
-        [_vm._v("Cerrar")]
-      ),
-      _vm._v(" "),
-      _c(
-        "button",
-        { staticClass: "btn btn-primary btn-link", attrs: { type: "submit" } },
-        [_vm._v("Save changes")]
-      )
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("thead", [
-      _c("th", [_vm._v("codigo del Profesor")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("nombre")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Paterno")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Materno")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("fecha de nacimiento")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("edad")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("puesto")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("Antiguedad")]),
-      _vm._v(" "),
-      _c("th", [_vm._v("acciones")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/addProfesores.vue?vue&type=template&id=ed115244&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/addProfesores.vue?vue&type=template&id=ed115244& ***!
-  \****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/bootvueComponent.vue?vue&type=template&id=da914858&":
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/bootvueComponent.vue?vue&type=template&id=da914858& ***!
+  \*******************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { attrs: { role: "group" } },
+    [
+      _c("label", { attrs: { for: "input-live" } }, [_vm._v("Name:")]),
+      _vm._v(" "),
+      _c("b-form-input", {
+        attrs: {
+          id: "input-live",
+          state: _vm.nameState,
+          "aria-describedby": "input-live-help input-live-feedback",
+          placeholder: "Enter your name",
+          trim: ""
+        },
+        model: {
+          value: _vm.name,
+          callback: function($$v) {
+            _vm.name = $$v
+          },
+          expression: "name"
+        }
+      }),
+      _vm._v(" "),
+      _c("b-form-invalid-feedback", { attrs: { id: "input-live-feedback" } }, [
+        _vm._v("\n    Enter at least 3 letters\n  ")
+      ]),
+      _vm._v(" "),
+      _c("b-form-text", { attrs: { id: "input-live-help" } }, [
+        _vm._v("Your full name.")
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/addProfesores.vue?vue&type=template&id=b9df57a6&":
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/profesores/addProfesores.vue?vue&type=template&id=b9df57a6& ***!
+  \***************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -39504,7 +39158,7 @@ var render = function() {
     {
       staticClass: "modal fade",
       attrs: {
-        id: "ModalProfesores",
+        id: "addProfesores",
         tabindex: "-1",
         role: "dialog",
         "aria-label": "EtiquetProfesores",
@@ -39555,7 +39209,7 @@ var render = function() {
                                     expression: "datos.codigo"
                                   }
                                 ],
-                                staticClass: "form-control  ",
+                                staticClass: "form-control",
                                 attrs: {
                                   type: "text",
                                   name: "codigo",
@@ -39915,7 +39569,7 @@ var staticRenderFns = [
       _c(
         "button",
         {
-          staticClass: "btn btn-danger btn-link",
+          staticClass: "btn btn-danger ",
           attrs: { type: "button", "data-dismiss": "modal" }
         },
         [_vm._v("Cerrar")]
@@ -39923,7 +39577,459 @@ var staticRenderFns = [
       _vm._v(" "),
       _c(
         "button",
-        { staticClass: "btn btn-primary btn-link", attrs: { type: "submit" } },
+        { staticClass: "btn btn-primary ", attrs: { type: "submit" } },
+        [_vm._v("Save changes")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/editProfesores.vue?vue&type=template&id=49debf44&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/profesores/editProfesores.vue?vue&type=template&id=49debf44& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "modal fade",
+      attrs: {
+        id: "editProfesores" + _vm.codigo,
+        tabindex: "-1",
+        role: "dialog",
+        "aria-label": "editProfesores",
+        "aria-hidden": "true"
+      }
+    },
+    [
+      _c(
+        "div",
+        { staticClass: "modal-dialog  modal-lg", attrs: { role: "document" } },
+        [
+          _c("div", { staticClass: "modal-content" }, [
+            _c(
+              "form",
+              {
+                attrs: { method: "put" },
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    return _vm.editarDatos($event)
+                  }
+                }
+              },
+              [
+                _vm._m(0),
+                _vm._v(" "),
+                _c("div", { staticClass: "modal-body" }, [
+                  _c("div", { staticClass: "row" }, [
+                    _c("div", { staticClass: "col" }, [
+                      _c(
+                        "div",
+                        { staticClass: "card card-body text-center " },
+                        [
+                          _c("h5", [_vm._v("Editar")]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-row" }, [
+                            _c("div", { staticClass: "col" }, [
+                              _c("label", { attrs: { for: "codigo" } }, [
+                                _vm._v("Codigo")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.datos.codigo,
+                                    expression: "datos.codigo"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: {
+                                  type: "text",
+                                  value: "datos.codigo",
+                                  name: "codigo",
+                                  id: "codigo",
+                                  placeholder: "Codigo"
+                                },
+                                domProps: { value: _vm.datos.codigo },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.datos,
+                                      "codigo",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col" }, [
+                              _c("label", { attrs: { for: "nombres" } }, [
+                                _vm._v("nombres")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.datos.nombre,
+                                    expression: "datos.nombre"
+                                  }
+                                ],
+                                staticClass: "form-control  ",
+                                attrs: {
+                                  type: "text",
+                                  name: "nombre",
+                                  id: "nombre",
+                                  placeholder: "Nombre"
+                                },
+                                domProps: { value: _vm.datos.nombre },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.datos,
+                                      "nombre",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-row" }, [
+                            _c("div", { staticClass: "col" }, [
+                              _c("label", { attrs: { for: "ap" } }, [
+                                _vm._v("Apellido Paterno")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.datos.ap,
+                                    expression: "datos.ap"
+                                  }
+                                ],
+                                staticClass: "form-control ",
+                                attrs: {
+                                  type: "text",
+                                  name: "ap",
+                                  id: "ap",
+                                  placeholder: "Apellido parterno"
+                                },
+                                domProps: { value: _vm.datos.ap },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.datos,
+                                      "ap",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ]),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col" }, [
+                              _c("label", { attrs: { for: "am" } }, [
+                                _vm._v("Apellido Materno")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.datos.am,
+                                    expression: "datos.am"
+                                  }
+                                ],
+                                staticClass: "form-control ",
+                                attrs: {
+                                  type: "text",
+                                  name: "am",
+                                  id: "am",
+                                  placeholder: "Apellido Materno"
+                                },
+                                domProps: { value: _vm.datos.am },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.datos,
+                                      "am",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-row" }, [
+                            _c(
+                              "div",
+                              { staticClass: "col" },
+                              [
+                                _c(
+                                  "Label",
+                                  { attrs: { for: "fecha_nacimiento" } },
+                                  [_vm._v("Fecha de nacimiento")]
+                                ),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.datos.fecha_nacimiento,
+                                      expression: "datos.fecha_nacimiento"
+                                    }
+                                  ],
+                                  staticClass: "form-control ",
+                                  attrs: {
+                                    type: "text",
+                                    name: "fecha_nacimiento",
+                                    id: "fecha_nacimiento",
+                                    placeholder: "Año/mes/dia"
+                                  },
+                                  domProps: {
+                                    value: _vm.datos.fecha_nacimiento
+                                  },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.datos,
+                                        "fecha_nacimiento",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "col" },
+                              [
+                                _c("Label", { attrs: { for: "edad" } }, [
+                                  _vm._v("Edad")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.datos.edad,
+                                      expression: "datos.edad"
+                                    }
+                                  ],
+                                  staticClass: "form-control ",
+                                  attrs: {
+                                    type: "text",
+                                    name: "edad",
+                                    id: "edad",
+                                    placeholder: "Edad"
+                                  },
+                                  domProps: { value: _vm.datos.edad },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.datos,
+                                        "edad",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                })
+                              ],
+                              1
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("br"),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "form-row" }, [
+                            _c(
+                              "div",
+                              { staticClass: "col" },
+                              [
+                                _c("Label", { attrs: { for: "puesto" } }, [
+                                  _vm._v("Puesto Actual")
+                                ]),
+                                _vm._v(" "),
+                                _c("input", {
+                                  directives: [
+                                    {
+                                      name: "model",
+                                      rawName: "v-model",
+                                      value: _vm.datos.puesto,
+                                      expression: "datos.puesto"
+                                    }
+                                  ],
+                                  staticClass: "form-control ",
+                                  attrs: {
+                                    type: "text",
+                                    name: "puesto",
+                                    id: "puesto ",
+                                    placeholder: "Puesto Actual"
+                                  },
+                                  domProps: { value: _vm.datos.puesto },
+                                  on: {
+                                    input: function($event) {
+                                      if ($event.target.composing) {
+                                        return
+                                      }
+                                      _vm.$set(
+                                        _vm.datos,
+                                        "puesto",
+                                        $event.target.value
+                                      )
+                                    }
+                                  }
+                                }),
+                                _vm._v(" "),
+                                _c("span", {
+                                  staticClass: "form-control-feedback"
+                                })
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "col" }, [
+                              _c("label", { attrs: { for: "antiguedad" } }, [
+                                _vm._v("Antiguedad")
+                              ]),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.datos.antiguedad,
+                                    expression: "datos.antiguedad"
+                                  }
+                                ],
+                                staticClass: "form-control ",
+                                attrs: {
+                                  type: "text",
+                                  name: "antiguedad",
+                                  id: "antiguedad",
+                                  placeholder: "Antiguedad"
+                                },
+                                domProps: { value: _vm.datos.antiguedad },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.$set(
+                                      _vm.datos,
+                                      "antiguedad",
+                                      $event.target.value
+                                    )
+                                  }
+                                }
+                              })
+                            ])
+                          ])
+                        ]
+                      )
+                    ])
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(1)
+              ]
+            )
+          ])
+        ]
+      )
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c("h5", { staticClass: "modal-title" }, [_vm._v("Editar Profesores")]),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("i", { staticClass: "material-icons" }, [_vm._v("X")])]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-danger ",
+          attrs: { type: "button", "data-dismiss": "modal" }
+        },
+        [_vm._v("Cerrar")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary ", attrs: { type: "submit" } },
         [_vm._v("Save changes")]
       )
     ])
@@ -52125,7 +52231,9 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 Vue.component('example-component', __webpack_require__(/*! ./components/ExampleComponent.vue */ "./resources/js/components/ExampleComponent.vue")["default"]);
 Vue.component('tablas-component', __webpack_require__(/*! ./components/TablasComponent.vue */ "./resources/js/components/TablasComponent.vue")["default"]);
 Vue.component('tablasexp-component', __webpack_require__(/*! ./components/TablasExpComponent.vue */ "./resources/js/components/TablasExpComponent.vue")["default"]);
-Vue.component('addprofesores-component', __webpack_require__(/*! ./components/addProfesores.vue */ "./resources/js/components/addProfesores.vue")["default"]);
+Vue.component('addprofesores-component', __webpack_require__(/*! ./components/profesores/addProfesores.vue */ "./resources/js/components/profesores/addProfesores.vue")["default"]);
+Vue.component('editprofesores-component', __webpack_require__(/*! ./components/profesores/editProfesores.vue */ "./resources/js/components/profesores/editProfesores.vue")["default"]);
+Vue.component('bootvue-component', __webpack_require__(/*! ./components/bootvueComponent.vue */ "./resources/js/components/bootvueComponent.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -52390,17 +52498,17 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/addProfesores.vue":
-/*!***************************************************!*\
-  !*** ./resources/js/components/addProfesores.vue ***!
-  \***************************************************/
+/***/ "./resources/js/components/bootvueComponent.vue":
+/*!******************************************************!*\
+  !*** ./resources/js/components/bootvueComponent.vue ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _addProfesores_vue_vue_type_template_id_ed115244___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addProfesores.vue?vue&type=template&id=ed115244& */ "./resources/js/components/addProfesores.vue?vue&type=template&id=ed115244&");
-/* harmony import */ var _addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addProfesores.vue?vue&type=script&lang=js& */ "./resources/js/components/addProfesores.vue?vue&type=script&lang=js&");
+/* harmony import */ var _bootvueComponent_vue_vue_type_template_id_da914858___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bootvueComponent.vue?vue&type=template&id=da914858& */ "./resources/js/components/bootvueComponent.vue?vue&type=template&id=da914858&");
+/* harmony import */ var _bootvueComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bootvueComponent.vue?vue&type=script&lang=js& */ "./resources/js/components/bootvueComponent.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -52410,9 +52518,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _addProfesores_vue_vue_type_template_id_ed115244___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _addProfesores_vue_vue_type_template_id_ed115244___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _bootvueComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _bootvueComponent_vue_vue_type_template_id_da914858___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _bootvueComponent_vue_vue_type_template_id_da914858___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -52422,38 +52530,176 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/components/addProfesores.vue"
+component.options.__file = "resources/js/components/bootvueComponent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/components/addProfesores.vue?vue&type=script&lang=js&":
-/*!****************************************************************************!*\
-  !*** ./resources/js/components/addProfesores.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************/
+/***/ "./resources/js/components/bootvueComponent.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/bootvueComponent.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./addProfesores.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/addProfesores.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_bootvueComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./bootvueComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/bootvueComponent.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_bootvueComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/js/components/addProfesores.vue?vue&type=template&id=ed115244&":
-/*!**********************************************************************************!*\
-  !*** ./resources/js/components/addProfesores.vue?vue&type=template&id=ed115244& ***!
-  \**********************************************************************************/
+/***/ "./resources/js/components/bootvueComponent.vue?vue&type=template&id=da914858&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/components/bootvueComponent.vue?vue&type=template&id=da914858& ***!
+  \*************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_template_id_ed115244___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./addProfesores.vue?vue&type=template&id=ed115244& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/addProfesores.vue?vue&type=template&id=ed115244&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_template_id_ed115244___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bootvueComponent_vue_vue_type_template_id_da914858___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./bootvueComponent.vue?vue&type=template&id=da914858& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/bootvueComponent.vue?vue&type=template&id=da914858&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bootvueComponent_vue_vue_type_template_id_da914858___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_template_id_ed115244___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_bootvueComponent_vue_vue_type_template_id_da914858___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/profesores/addProfesores.vue":
+/*!**************************************************************!*\
+  !*** ./resources/js/components/profesores/addProfesores.vue ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _addProfesores_vue_vue_type_template_id_b9df57a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./addProfesores.vue?vue&type=template&id=b9df57a6& */ "./resources/js/components/profesores/addProfesores.vue?vue&type=template&id=b9df57a6&");
+/* harmony import */ var _addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./addProfesores.vue?vue&type=script&lang=js& */ "./resources/js/components/profesores/addProfesores.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _addProfesores_vue_vue_type_template_id_b9df57a6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _addProfesores_vue_vue_type_template_id_b9df57a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/profesores/addProfesores.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/profesores/addProfesores.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/profesores/addProfesores.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./addProfesores.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/addProfesores.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/profesores/addProfesores.vue?vue&type=template&id=b9df57a6&":
+/*!*********************************************************************************************!*\
+  !*** ./resources/js/components/profesores/addProfesores.vue?vue&type=template&id=b9df57a6& ***!
+  \*********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_template_id_b9df57a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./addProfesores.vue?vue&type=template&id=b9df57a6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/addProfesores.vue?vue&type=template&id=b9df57a6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_template_id_b9df57a6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_addProfesores_vue_vue_type_template_id_b9df57a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/profesores/editProfesores.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/profesores/editProfesores.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _editProfesores_vue_vue_type_template_id_49debf44___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./editProfesores.vue?vue&type=template&id=49debf44& */ "./resources/js/components/profesores/editProfesores.vue?vue&type=template&id=49debf44&");
+/* harmony import */ var _editProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./editProfesores.vue?vue&type=script&lang=js& */ "./resources/js/components/profesores/editProfesores.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _editProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _editProfesores_vue_vue_type_template_id_49debf44___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _editProfesores_vue_vue_type_template_id_49debf44___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/profesores/editProfesores.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/profesores/editProfesores.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/profesores/editProfesores.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_editProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./editProfesores.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/editProfesores.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_editProfesores_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/profesores/editProfesores.vue?vue&type=template&id=49debf44&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/profesores/editProfesores.vue?vue&type=template&id=49debf44& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_editProfesores_vue_vue_type_template_id_49debf44___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./editProfesores.vue?vue&type=template&id=49debf44& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/profesores/editProfesores.vue?vue&type=template&id=49debf44&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_editProfesores_vue_vue_type_template_id_49debf44___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_editProfesores_vue_vue_type_template_id_49debf44___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

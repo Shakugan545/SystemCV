@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Academica;
+use App\Http\Requests\AcademicaEditRequest;
+use App\Profesores;
+use App\Http\Requests\AcademicaRequest;
 class AcademicaController extends Controller
 {
     /**
@@ -11,10 +14,18 @@ class AcademicaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+       
+    }
     public function index()
     {
         $academica = Academica::all();
-        return view('tablas',compact('academica'));
+       
+         
+        
+         return view('academica.index',compact('academica'));
     }
 
     /**
@@ -24,7 +35,8 @@ class AcademicaController extends Controller
      */
     public function create()
     {
-        return view('profesores.index');
+        
+        return view('academica.crear');
     }
 
     /**
@@ -33,12 +45,10 @@ class AcademicaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AcademicaRequest $request)
     {
-        $academica =  Academica::create($request->all());
-        
-         
-         return redirect()->route('profesores.index',compact('academica'));
+            $academica =  Academica::create($request->all());
+             return redirect()->route('academica.index',compact('academica'))->with('guardar','guardar');
     }
 
     /**
@@ -60,9 +70,9 @@ class AcademicaController extends Controller
      */
     public function edit($id)
     {
-        $academica = Academica::find($id);
+        $academica = Academica::findOrFail($id);
        
-        return view('academica.edit',compact('academica'));
+        return view('academica.editar',compact('academica'));
     }
 
     /**
@@ -72,15 +82,11 @@ class AcademicaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(AcademicaEditRequest $request, $id)
     {
         $academica = Academica::find($id);
-        
- 
-         $academica->update($request->all());
-       
- 
-         return redirect()->route('profesores.index');
+        $academica->update($request->all());
+        return redirect()->route('academica.index')->with('editar','editar');
     }
 
     /**
@@ -95,7 +101,7 @@ class AcademicaController extends Controller
        
         try{
              $academica->delete();
-             return redirect()->route('profesores.index');
+             return redirect()->route('academica.index')->with('eliminar','ok');
         }catch(\Exception $e){
              return $e;
         }

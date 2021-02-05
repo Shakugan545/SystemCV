@@ -23,7 +23,10 @@ class CreateLogrosNoAcademicosTable extends Migration
         Schema::create($this->tableName, function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->string('descripcion', 200)->nullable();
+            $table->string('logro', 100)->nullable();
+            $table->string('autores', 100)->nullable();
+            $table->string('relevancia', 100)->nullable();
+            $table->string('lugar', 45)->nullable();
             $table->unsignedInteger('profesores_codigo');
 
             $table->index(["profesores_codigo"], 'fk_logros_no_academicos_profesores1_idx');

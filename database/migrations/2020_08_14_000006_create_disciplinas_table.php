@@ -25,8 +25,8 @@ class CreateDisciplinasTable extends Migration
             $table->increments('id');
             $table->string('institucion', 100)->nullable();
             $table->string('actividad', 45)->nullable();
-            $table->string('horas', 45)->nullable();
-            $table->string('ano', 45)->nullable();
+            $table->integer('horas')->nullable();
+            $table->integer('ano')->nullable();
             $table->string('pais', 45)->nullable();
             $table->unsignedInteger('profesores_codigo');
 

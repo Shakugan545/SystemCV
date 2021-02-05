@@ -25,7 +25,7 @@ class CreateCapacitacionesTable extends Migration
             $table->increments('id');
             $table->string('tipo_capacitacion', 100)->nullable();
             $table->string('institucion_C', 100)->nullable();
-            $table->time('horas')->nullable();
+            $table->integer('horas')->nullable();
             $table->integer('ano_obtenido_capacitacion')->nullable();
             $table->string('pais_capacitacion', 45)->nullable();
             $table->unsignedInteger('profesores_codigo');

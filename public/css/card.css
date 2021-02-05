@@ -1,0 +1,24 @@
+
+
+
+.tarjeta3{
+    margin-top:-5px;
+    height: 120px;
+	box-shadow:1px 5px 15px #487eb0;
+    background: linear-gradient(-90deg,#f5f6fa, #f5f6fa); 
+}
+
+.card-section-third span i{
+	padding:17px;
+	margin:0px 10px;
+	color:#fff;
+	height:50px;
+	width:50px;
+	box-shadow:1px 6px 24px #d2d2d2;
+	background: linear-gradient(-90deg, #11998e, #38ef7d); 
+}
+
+.colorGuardar{
+
+background-color: #44bd32 ;
+}
