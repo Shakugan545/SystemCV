@@ -28,7 +28,6 @@ class AcademicaRequest extends FormRequest
             'nombre_academica'        => 'required|regex:/^[\pL\s\-]+$/u|max:90',
             'especialidad'            => 'required|regex:/^[\pL\s\-]+$/u|max:40',
             'institucion_A'           => 'required|max:90',
-            'nivel'                   => 'required',
             'cedula'                  => 'required|numeric|digits_between:0,10',
             'ano_obtenido'            => 'required|numeric|digits:4',
             'pais'                    => 'required|regex:/^[\pL\s\-]+$/u|max:40'
@@ -47,7 +46,6 @@ class AcademicaRequest extends FormRequest
             'especialidad.required'                 => 'El campo  especialidad Obligatorio',
             'especialidad.regex'                    => 'El campo  no permite numeros',
             'institucion_A.required'                => 'El campo  Institución Obligatorio',
-            'nivel.required'                        => 'El campo  Nivel Obligatorio',
             'cedula.required'                       => 'El campo  Cedula Obligatorio',
             'cedula.numeric'                        => 'El campo debe ser numérico',
             'cedula.digits_between'                 => 'El campo no puede exceder de 10 digitos',

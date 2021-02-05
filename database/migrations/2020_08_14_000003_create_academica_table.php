@@ -26,7 +26,6 @@ class CreateAcademicaTable extends Migration
             $table->string('nombre_academica', 100)->nullable();
             $table->string('especialidad', 45)->nullable();
             $table->string('institucion_A', 100)->nullable();
-            $table->string('nivel', 45)->nullable();
             $table->string('cedula', 50)->nullable();
             $table->integer('ano_obtenido')->nullable();
             $table->string('pais', 45)->nullable();

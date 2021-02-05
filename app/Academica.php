@@ -15,7 +15,6 @@ class Academica extends Model
         'nombre_academica',
         'especialidad',
         'institucion_A',
-        'nivel',
         'cedula',
         'ano_obtenido',
         'pais',

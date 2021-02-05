@@ -56,38 +56,30 @@
 
          <div class="form-row">
              <div class="col">
-                 <label for="nivel">Nivel</label>
-                 <input type="text" value="{{old('nivel')}}" name="nivel" id="nivel" class="form-control  @error('nivel') is-invalid @enderror" placeholder="Nivel">
-                 @error('nivel')
-                     <div class="alert-danger">{!!$errors->first('nivel')!!}</div>
-                     @enderror
-             </div>
-             <div class="col">
                  <label for="cedula">Cédula</label>
                  <input type="text" value="{{old('cedula')}}" name="cedula" id="cedula" class="form-control  @error('cedula') is-invalid @enderror" placeholder="Cédula">
                  @error('cedula')
                      <div class="alert-danger">{!!$errors->first('cedula')!!}</div>
                      @enderror
              </div>
-         </div>
-         <br>
-         <div class="form-row">
+
              <div class="col">
-                 <label for="ano_obtenido">Año de obtención</label>
-                 <input type="text" value="{{old('ano_obtenido')}}" name="ano_obtenido" id="ano_obtenido" class="form-control  @error('ano_obtenido') is-invalid @enderror"
-                     placeholder="Año de obtención">
-                     @error('ano_obtenido')
-                     <div class="alert-danger">{!!$errors->first('ano_obtenido')!!}</div>
-                     @enderror
-             </div>
-             <div class="col">
-                 <label for="pais">País</label>
-                 <input type="text" value="{{old('pais')}}" name="pais" id="pais" class="form-control  @error('pais') is-invalid @enderror" placeholder="País">
-                 @error('pais')
-                     <div class="alert-danger">{!!$errors->first('pais')!!}</div>
-                     @enderror
-             </div>
+                <label for="ano_obtenido">Año de obtención</label>
+                <input type="text" value="{{old('ano_obtenido')}}" name="ano_obtenido" id="ano_obtenido" class="form-control  @error('ano_obtenido') is-invalid @enderror"
+                    placeholder="Año de obtención">
+                    @error('ano_obtenido')
+                    <div class="alert-danger">{!!$errors->first('ano_obtenido')!!}</div>
+                    @enderror
+            </div>
+            <div class="col">
+                <label for="pais">País</label>
+                <input type="text" value="{{old('pais')}}" name="pais" id="pais" class="form-control  @error('pais') is-invalid @enderror" placeholder="País">
+                @error('pais')
+                    <div class="alert-danger">{!!$errors->first('pais')!!}</div>
+                    @enderror
+            </div>
          </div>
+        
        
      
          <br>

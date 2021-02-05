@@ -21,7 +21,6 @@
                         <th>Nombre</th>
                         <th>Especialidad</th>
                         <th>Institución</th>
-                        <th>Nivel</th>
                         <th>Cédula</th>
                         <th>Año obtenido</th>
                         <th>Pais</th>
@@ -35,7 +34,6 @@
                         <td>{{ $academi->nombre_academica}}</td>
                         <td>{{ $academi->especialidad}}</td>
                         <td>{{ $academi->institucion_A}}</td>
-                        <td>{{ $academi->nivel}}</td>
                         <td>{{ $academi->cedula}}</td>
                         <td>{{ $academi->ano_obtenido}}</td>
                         <td>{{ $academi->pais}}</td>

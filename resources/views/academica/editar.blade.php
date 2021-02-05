@@ -59,14 +59,6 @@
 
                 <div class="form-row">
                     <div class="col">
-                        <label for="nivel">Nivel</label>
-                        <input type="text" value="{{ $academica->nivel }}" name="nivel" id="nivel"
-                            class="form-control @error('nivel') is-invalid @enderror" placeholder="Nivel">
-                            @error('nivel')
-                            <div class="alert-danger">{!!$errors->first('nivel')!!}</div>
-                            @enderror
-                    </div>
-                    <div class="col">
                         <label for="cedula">Cédula</label>
                         <input type="text" value="{{ $academica->cedula }}" name="cedula" id="cedula"
                             class="form-control @error('cedula') is-invalid @enderror" placeholder="Cedula">
@@ -74,9 +66,6 @@
                             <div class="alert-danger">{!!$errors->first('cedula')!!}</div>
                             @enderror
                     </div>
-                </div>
-                <br>
-                <div class="form-row">
                     <div class="col">
                         <label for="ano_obtenido">Año de obtención</label>
                         <input type="text" value="{{ $academica->ano_obtenido }}" name="ano_obtenido"
@@ -94,6 +83,7 @@
                             @enderror
                     </div>
                 </div>
+              
             
         
         <br>
