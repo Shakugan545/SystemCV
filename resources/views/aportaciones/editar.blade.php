@@ -70,3 +70,12 @@
     })
 </script>
 @endsection
+
+@section('info')
+    <p class=" text-justify ">
+        Describir, en máximo 200 palabras, la participación del profesor en actividades relevantes del PE,
+        tales como: diseño el PE, diseño de asignatura(s) del PE, análisis de indicadores del PE,
+        participación en cuerpos colegiados del PE, participación en grupos de mejora continua del PE,
+        en actividades extracurriculares relacionadas con el PE, etc. 
+    </p>
+@endsection
